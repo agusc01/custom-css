@@ -19,7 +19,7 @@
   }
 }
 
-@mixin cols-no-query {
+@mixin cols-no-queries-medias {
   .col {
     flex: 1 0 0%;
   }
@@ -52,6 +52,17 @@
       &-#{$size} {
         @extend %container;
       }
+    }
+  }
+}
+
+@mixin media-queries-container-cols($size-list) {
+  @each $size, $breakpoint, $min-width in $sizes-list {
+    @media (min-width: $breakpoint) {
+      .container {
+        width: $min-width;
+      }
+      @include cols($size);
     }
   }
 }

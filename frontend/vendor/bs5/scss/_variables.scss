@@ -1,18 +1,26 @@
 $max-cols: 12;
 
-$sizes: sm, md, lg, xl, xxl;
-
-$breakpoint-1-sm: 576px;
-$breakpoint-2-md: 768px;
-$breakpoint-3-lg: 992px;
-$breakpoint-4-xl: 1200px;
-$breakpoint-5-xxl: 1400px;
-
-$min-width-1-sm: 540px;
-$min-width-2-md: 720px;
-$min-width-3-lg: 960px;
-$min-width-4-xl: 1140px;
-$min-width-5-xxl: 1320px;
-
 $gutter-left: 0.75rem;
 $gutter-right: $gutter-left;
+
+$sizes: "sm", "md", "lg", "xl", "xxl";
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+$min-width-sm: 540px;
+$min-width-md: 720px;
+$min-width-lg: 960px;
+$min-width-xl: 1140px;
+$min-width-xxl: 1320px;
+
+$sizes-list: (
+  "sm" #{$breakpoint-sm} #{$min-width-sm},
+  "md" #{$breakpoint-md} #{$min-width-md},
+  "lg" #{$breakpoint-lg} #{$min-width-lg},
+  "xl" #{$breakpoint-xl} #{$min-width-xl},
+  "xxl" #{$breakpoint-xxl} #{$min-width-xxl}
+);
