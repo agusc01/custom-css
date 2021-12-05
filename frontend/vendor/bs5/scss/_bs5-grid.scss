@@ -1,0 +1,140 @@
+@import "variables";
+@import "mixins";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+%container {
+  width: 100%;
+  padding-right: $gutter-right;
+  padding-left: $gutter-left;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  @extend %container;
+  &-fluid {
+    @extend %container;
+  }
+  &-sm {
+    @extend %container;
+  }
+  &-md {
+    @extend %container;
+  }
+  &-lg {
+    @extend %container;
+  }
+  &-xl {
+    @extend %container;
+  }
+  &-xxl {
+    @extend %container;
+  }
+}
+
+@media (min-width: $breakpoint-1-sm) {
+  .container,
+  .container-sm {
+    max-width: $min-width-1-sm;
+  }
+}
+
+@media (min-width: $breakpoint-2-md) {
+  .container,
+  .container-sm,
+  .container-md {
+    max-width: $min-width-2-md;
+  }
+}
+
+@media (min-width: $breakpoint-3-lg) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg {
+    max-width: $min-width-3-lg;
+  }
+}
+
+@media (min-width: $breakpoint-4-xl) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl {
+    max-width: $min-width-4-xl;
+  }
+}
+
+@media (min-width: $breakpoint-5-xxl) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: $min-width-5-xxl;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container > .row {
+  margin-right: -1 * $gutter-right;
+  margin-left: -1 * $gutter-left;
+}
+
+.row > * {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
+@include cols-no-query();
+
+@media (min-width: $breakpoint-1-sm) {
+  .container {
+    width: $min-width-1-sm;
+  }
+  @include cols("sm");
+}
+
+@media (min-width: $breakpoint-2-md) {
+  .container {
+    width: $min-width-2-md;
+  }
+  @include cols("md");
+}
+
+@media (min-width: $breakpoint-3-lg) {
+  .container {
+    width: $min-width-3-lg;
+  }
+  @include cols("lg");
+}
+
+@media (min-width: $breakpoint-4-xl) {
+  .container {
+    width: $min-width-4-xl;
+  }
+  @include cols("xl");
+}
+
+@media (min-width: $breakpoint-5-xxl) {
+  .container {
+    width: $min-width-5-xxl;
+  }
+  @include cols("xxl");
+}

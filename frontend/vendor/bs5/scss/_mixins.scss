@@ -1,0 +1,36 @@
+@import "variables";
+@import "functions";
+
+@mixin cols($size) {
+  .col-#{$size} {
+    flex: 1 0 0%;
+  }
+  [class^="col-#{$size}-"] {
+    flex: 0 0 auto;
+  }
+  .col-#{$size}-auto {
+    width: auto;
+  }
+  @for $i from 1 to $max-cols + 1 {
+    .col-#{$size}-#{$i} {
+      $value: strip-units($i) / ($max-cols) * 100;
+      width: concat($value, "%");
+    }
+  }
+}
+
+@mixin cols-no-query {
+  .col {
+    flex: 1 0 0%;
+  }
+  // [class^="col-"] {
+  // flex: 0 0 auto;
+  // }
+  @for $i from 1 to $max-cols + 1 {
+    .col-#{$i} {
+      $value: strip-units($i) / ($max-cols) * 100;
+      width: concat($value, "%");
+      flex: 0 0 auto;
+    }
+  }
+}

@@ -1,0 +1,8 @@
+// https://github.com/sweetalert2/sweetalert2/issues/2263
+@function strip-units($number) {
+  @return $number / ($number * 0 + 1);
+}
+
+@function concat($str1, $str2) {
+  @return unquote($string: $str1 + $str2);
+}
