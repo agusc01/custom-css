@@ -11,35 +11,7 @@ html {
   box-sizing: inherit;
 }
 
-%container {
-  width: 100%;
-  padding-right: $gutter-right;
-  padding-left: $gutter-left;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.container {
-  @extend %container;
-  &-fluid {
-    @extend %container;
-  }
-  &-sm {
-    @extend %container;
-  }
-  &-md {
-    @extend %container;
-  }
-  &-lg {
-    @extend %container;
-  }
-  &-xl {
-    @extend %container;
-  }
-  &-xxl {
-    @extend %container;
-  }
-}
+@include containers;
 
 @media (min-width: $breakpoint-1-sm) {
   .container,

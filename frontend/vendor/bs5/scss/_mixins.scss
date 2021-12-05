@@ -34,3 +34,24 @@
     }
   }
 }
+
+@mixin containers {
+  %container {
+    width: 100%;
+    padding-right: $gutter-right;
+    padding-left: $gutter-left;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .container {
+    @extend %container;
+    &-fluid {
+      @extend %container;
+    }
+    @each $size in $sizes {
+      &-#{$size} {
+        @extend %container;
+      }
+    }
+  }
+}
